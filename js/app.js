@@ -28,18 +28,18 @@ function updateCount(num, maxNum) {
 /* --------------- Sticky Navbar --------------- */
 
 function stickyNavbar() {
-   header.classList.toggle("scrolled", window.pageYOffset > 0);
+  header.classList.toggle("scrolled", window.pageYOffset > 0);
 }
 
-stickyNavbar()
+stickyNavbar();
 
 window.addEventListener("scroll", stickyNavbar);
 
 /* --------------- Reveal Animation --------------- */
 
 let sr = ScrollReveal({
-   duration: 2500,
-   distance: "60px"
+  duration: 2500,
+  distance: "60px",
 });
 
 sr.reveal(".showcase-info", { delay: 600 });
@@ -48,33 +48,33 @@ sr.reveal(".showcase-image", { origin: "top", delay: 700 });
 /* --------------- Skills Progress Bar Animation --------------- */
 
 function hasReached(el) {
-   let topPosition = el.getBoundingClientRect().top;
-   
-   if(window.innerHeight >= topPosition + el.offsetHeight) return true;
-   return false;
+  let topPosition = el.getBoundingClientRect().top;
+
+  if (window.innerHeight >= topPosition + el.offsetHeight) return true;
+  return false;
 }
 
 let skillsPlayed = false;
 
 function skillsCounter() {
-   if(!hasReached(first_skill)) return;
+  if (!hasReached(first_skill)) return;
 
-   skillsPlayed = true;
+  skillsPlayed = true;
 
-   sk_counters.forEach((counter, i) => {
-      let target = +counter.dataset.target;
-      let strokeValue = 427 - 427 * (target / 100);
+  sk_counters.forEach((counter, i) => {
+    let target = +counter.dataset.target;
+    let strokeValue = 427 - 427 * (target / 100);
 
-      progress_bars[i].style.setProperty("--target", strokeValue);
+    progress_bars[i].style.setProperty("--target", strokeValue);
 
-      setTimeout(() => {
-         updateCount(counter, target);
-      }, 400);
-   });
-   
-   progress_bars.forEach(
-      (p) => (p.style.animation = "progress 2s ease-in-out forwards")
-   );
+    setTimeout(() => {
+      updateCount(counter, target);
+    }, 400);
+  });
+
+  progress_bars.forEach(
+    (p) => (p.style.animation = "progress 2s ease-in-out forwards")
+  );
 }
 
 /* --------------- Services Counter Animation --------------- */
@@ -82,16 +82,16 @@ function skillsCounter() {
 let mlPlayed = false;
 
 function mlCounter() {
-   if (!hasReached(ml_section)) return;
-   mlPlayed = true;
-   
-   ml_couters.forEach(ctr => {
-      let target = +ctr.dataset.target;
-      
-      setTimeout(() => {
-         updateCount(ctr, target);
-      }, 400);
-   });
+  if (!hasReached(ml_section)) return;
+  mlPlayed = true;
+
+  ml_couters.forEach((ctr) => {
+    let target = +ctr.dataset.target;
+
+    setTimeout(() => {
+      updateCount(ctr, target);
+    }, 400);
+  });
 }
 /* --------------- Portfolio Filter Animation --------------- */
 
