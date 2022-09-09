@@ -802,7 +802,24 @@ header .scrolled .logo {
   transition: 0.3s var(--i);
 }
 /* --------------- Testimonials Section Styling --------------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 11;
+}
 
+.slider-wrap {
+  width: 90%;
+  max-width: 900px;
+}
+
+.slider-wrap img {
+  width: 100%;
+}
 /* --------------- Contact Section Styling --------------- */
 
 /* --------------- Subscription Section Styling --------------- */
