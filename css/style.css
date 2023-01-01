@@ -50,6 +50,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+body.stopScrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 ::selection {
   background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
   color: #fff;
@@ -683,6 +688,10 @@ header .scrolled .logo {
   z-index: -1;
 }
 /* --------------- Portfolio Section Styling --------------- */
+.portfolio .container {
+  transition: 0.4s;
+}
+
 .portfolio-header {
   display: flex;
   align-items: flex-end;
@@ -821,6 +830,7 @@ header .scrolled .logo {
   left: 0;
   background-color: rgba(0, 0, 0, 0.85);
   opacity: 0;
+  transition: 0.3s;
 }
 
 .slider-wrap {
@@ -835,6 +845,7 @@ header .scrolled .logo {
   align-items: center;
   justify-items: center;
   opacity: 0;
+  transition: 0.2s;
 }
 
 .slider-wrap img {
@@ -852,6 +863,24 @@ header .scrolled .logo {
 
 .slider-wrap img.showImage {
   display: block;
+}
+
+.portfolio.open .modal {
+  pointer-events: auto;
+}
+
+.portfolio.open .modal-overlay {
+  opacity: 1;
+}
+
+.portfolio.open .container {
+  transform: scale(0.9);
+}
+
+.portfolio.open .slider-wrap {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: 0.45s 0.1s;
 }
 /* --------------- Contact Section Styling --------------- */
 
