@@ -1009,6 +1009,12 @@ header .scrolled .logo {
 }
 /* --------------- Contact Section Styling --------------- */
 
+.contact .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4rem;
+}
+
 /* --------------- Subscription Section Styling --------------- */
 
 /* --------------- Footer Styling --------------- */
