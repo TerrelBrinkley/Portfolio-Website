@@ -137,9 +137,13 @@ ul {
   color: #fff;
   font-size: 0.85rem;
   letter-spacing: 0.4px;
-  /* min-width: 125px; */
+  min-width: 125px;
   text-align: center;
   text-transform: capitalize;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -189,6 +193,36 @@ ul {
 .section {
   position: relative;
   padding: var(--section-padding);
+}
+
+.form-input {
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  background: var(--bg-color-3);
+  border: 2px soild var(--bg-color-3);
+  width: 100%;
+  border-radius: 17px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-input::placeholder {
+  color: var(--text-color);
+}
+
+.form-input:hover {
+  filter: brightness(97%);
+}
+
+.form-input:valid,
+.form-input:focus {
+  filter: brightness(100%);
+  background: var(--bg-color-1);
+  border-color: var(--main-color-1);
 }
 
 .triangle {
@@ -1054,15 +1088,27 @@ header .scrolled .logo {
   line-height: 0.9;
 }
 
-.form-input {
-  display: inline-block;
-  padding: 0.9rem 1.5rem;
-  background: var(--bg-color-3);
-  border: 2px soild var(--bg-color-3);
+textarea.form-input {
+  resize: none;
+  min-height: 170px;
 }
 
 .contact-form .form-input {
   margin-bottom: 1.5rem;
+}
+
+.contact .square {
+  position: absolute;
+  left: 17%;
+  bottom: 15%;
+  transform: translate(-50%, -50%);
+}
+
+.contact .triangle {
+  position: absolute;
+  left: 90%;
+  top: 98%;
+  transform: translate(-50%, -50%);
 }
 
 /* --------------- Subscription Section Styling --------------- */
