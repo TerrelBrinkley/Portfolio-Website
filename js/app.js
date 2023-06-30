@@ -111,7 +111,8 @@ let mixer = mixitup(".portfolio-gallery", {
   },
 });
 
-/* --------------- Modal Pop Up Animation Animation --------------- */
+/* --------------- Modal Pop Up Animation --------------- */
+
 let currentIndex = 0;
 
 zoom_icons.forEach((icn, i) =>
@@ -150,18 +151,6 @@ function changeImage(index) {
   images.forEach((img) => img.classList.remove("showImage"));
   images[index].classList.add("showImage");
 }
-
-/* --------------- Modal Pop Up Animation Animation --------------- */
-
-const swiper = new Swiper(".swiper", {
-  loop: true,
-  speed: 500,
-  autoplay: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
 
 /* --------------- Change Active Link On Scroll --------------- */
 
